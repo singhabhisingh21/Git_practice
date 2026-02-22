@@ -2,7 +2,7 @@
 <suite name="Practice Website Suite">
     <test name="Automation Practice Test">
         <classes>
-            <class name="org.example.AutomationPracticeTest"/>
+            <class name="Run.practicepage_run"/>
         </classes>
     </test>
 </suite>
