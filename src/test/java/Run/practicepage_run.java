@@ -1,26 +1,25 @@
 package Run;
 
 import Pages.Practice_page;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class practicepage_run {
+import java.io.IOException;
 
-    private WebDriver driver;
+public class practicepage_run extends browser_initialisation {
+
     private Practice_page practicePage;
 
     /**
      * This method sets up the WebDriver and navigates to the page before each test.
+     * It uses the dynamic browser initialization from the parent class.
      */
     @BeforeMethod
-    public void setup() {
-        // Initialize the WebDriver
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public void setup() throws IOException {
+        // Initialize the WebDriver using the dynamic method from the base class
+        driver = initializeBrowser();
 
         // Navigate to the practice page
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
