@@ -132,8 +132,9 @@ public class Practice_page {
     }
 
     public void clickCoursesOnNewWindow() {
-        wait.until(ExpectedConditions.elementToBeClickable(coursesLinkOnNewPage)).click();
-        System.out.println("Successfully clicked on 'Courses' on the new page.");
+        WebElement coursesLink = wait.until(ExpectedConditions.presenceOfElementLocated(coursesLinkOnNewPage));
+        js.executeScript("arguments[0].click();", coursesLink);
+        System.out.println("Successfully clicked on 'Courses' on the new page using JavaScript.");
     }
 
     public void enterName(String name) {
